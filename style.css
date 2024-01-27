@@ -7,6 +7,13 @@ body{
     background-color: #e4b363;
     margin-top: 1rem;
 }
+.mode{
+    position: absolute;
+    left: 10px;
+    background-color: #e4b363;
+    color: black;
+}
+
 h1{
     font-size: 5.5vh;
     color: brown;

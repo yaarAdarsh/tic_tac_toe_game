@@ -3,8 +3,40 @@ let reset=document.querySelector(".reset");
 let msgContainer=document.querySelector(".msg");
 let message=document.querySelector("#message");
 let newbtn=document.querySelector(".newGame");
+//color mode button
+let mode=document.querySelector(".mode");
+let body=document.querySelector("body");
 
 turnO=true; //for O
+
+let initialMode="dark";
+
+let dark=()=>{
+        body.style.backgroundColor="black";
+        mode.style.backgroundColor="black";
+        mode.style.color="white";
+        mode.innerText="Dark";
+        mode.style.borderColor="white";
+        initialMode="light";
+    }
+
+let light=()=>{
+        body.style.backgroundColor="#e4b363";
+        mode.style.backgroundColor="#e4b363";
+        mode.style.color="black";
+        mode.innerText="Light";
+        initialMode="dark";
+    }
+
+mode.addEventListener("click",()=>{
+    if(initialMode==="light"){
+        dark();
+        initialMode="dark";
+    }else{
+        light();
+        initialMode="light";
+    }
+})
 
 const resetGame=()=>{
     turnO=true;
