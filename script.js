@@ -7,16 +7,31 @@ let newbtn=document.querySelector(".newGame");
 let mode=document.querySelector(".mode");
 let body=document.querySelector("body");
 
-turnO=true; //for O
+let turnO=true; //for O
 
-let initialMode="dark";
 
 let dark=()=>{
-        body.style.backgroundColor="black";
-        mode.style.backgroundColor="black";
-        mode.style.color="white";
-        mode.innerText="Dark";
-        mode.style.borderColor="white";
+        body.style.backgroundColor="#0F0606";
+        mode.style.backgroundColor="#0F0606";
+        mode.style.color="lightgray";
+        document.querySelector("h1").style.backgroundColor="#490000";
+        document.querySelector("h1").style.color="#7a7a7a";
+        for(b of box){
+            b.style.backgroundColor="#5D3C18 ";
+        }
+        // box.style.backgroundColor="black";
+        reset.style.backgroundColor="#766B65";
+        reset.style.color="#0F0606";
+        reset.style.border="2px solid lightgray";
+
+        newbtn.style.backgroundColor="#766B65";
+        newbtn.style.color="#0F0606";
+        newbtn.style.border="2px solid lightgray";
+
+        message.style.color="white";
+
+        mode.innerText="Dark Mode";
+        mode.style.borderColor="lightgray";
         initialMode="light";
     }
 
@@ -24,19 +39,26 @@ let light=()=>{
         body.style.backgroundColor="#e4b363";
         mode.style.backgroundColor="#e4b363";
         mode.style.color="black";
-        mode.innerText="Light";
-        initialMode="dark";
-    }
+        document.querySelector("h1").style.backgroundColor="aliceblue";
+        document.querySelector("h1").style.color="brown";
+        for(b of box){
+            b.style.backgroundColor="aliceblue";
+        }
+        // box.style.backgroundColor="#aliceblue"; 
+        reset.style.backgroundColor="black";
+        reset.style.color="white";
+        reset.style.border="none";
 
-mode.addEventListener("click",()=>{
-    if(initialMode==="light"){
-        dark();
+        newbtn.style.backgroundColor="black";
+        newbtn.style.color="white";
+        newbtn.style.border="none";
+
+        message.style.color="black";
+
+        mode.innerText="Light Mode";
+        mode.style.borderColor="black";
         initialMode="dark";
-    }else{
-        light();
-        initialMode="light";
     }
-})
 
 const resetGame=()=>{
     turnO=true;
@@ -122,3 +144,14 @@ const check=()=>{
 
 newbtn.addEventListener("click",resetGame);
 reset.addEventListener("click",resetGame);
+
+let initialMode="light";
+mode.addEventListener("click",()=>{
+        if(initialMode==="light"){
+            dark();
+            initialMode="dark";
+        }else{
+            light();
+            initialMode="light";
+        }
+    })
