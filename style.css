@@ -66,7 +66,12 @@ h1{
     border: none;
     background-color: black;
     color: white;
-    
+    cursor: pointer;   
+}
+
+.reset:hover{
+    box-shadow: 2px 2px 10px white, -2px -2px 10px white;
+    transition: box-shadow .3s ease-in-out;
 }
 
 .msg{
@@ -81,6 +86,11 @@ h1{
     border: none;
     background-color: black;
     color: white;
+}
+
+.newGame:hover{
+    box-shadow: 2px 2px 10px white, -2px -2px 10px white;
+    transition: box-shadow .3s ease-in-out;
 }
 #message{
     font-size: 4vh;
