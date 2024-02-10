@@ -15,6 +15,13 @@ body{
     border-radius: 5px;
 }
 
+.head{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+
+}
+
 h1{
     font-size: 5.5vh;
     color: brown;
@@ -33,7 +40,14 @@ h1{
     /* flex-wrap: wrap ; */
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: .1rem;
+}
+
+@media(max-width: 400px){
+    .container{
+        height: 45vh;
+    }
+
 }
 
 .boxes{
